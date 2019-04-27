@@ -1,5 +1,7 @@
 import math
+#/media/edwin/6F71AD994355D30E/Edwin/estacion_gr/tmp_hr # Ubicación
 def dp():
+    # Función que a partir de la temperatura, humedad y presión calcula otros parámetros
     t = float(input('Valor de la temperatura °C: '))
     rh = float(input('Valor de la humedad %: '))
     try:# Esto lo uso para poder poner un valor de default
