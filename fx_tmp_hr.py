@@ -5,9 +5,9 @@ def dp():
     t = float(input('Valor de la temperatura °C: '))
     rh = float(input('Valor de la humedad %: '))
     try:# Esto lo uso para poder poner un valor de default
-        pres = float(input('Press  # hPascales bgt = 746.6032:'))
+        pres = float(input('Press  # hPascales bgt = 752.01:'))
     except:
-        pres = 746.6032
+        pres = 752.01
     td =243.04*(math.log(rh/100)+((17.625*t)/(243.04+t)))/(17.625-math.log(rh/100)-((17.625*t)/(243.04+t)))
     td2 = t - ((100-rh)/5.)
     rh = t*math.atan(0.151977*(rh + 8.313659)**(1/2)) + math.atan(t + rh) - math.atan(rh - 1.676331
