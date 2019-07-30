@@ -8,6 +8,11 @@ def dp():
         pres = float(input('Press  # hPascales bgt = 752.01:'))
     except:
         pres = 752.01
+    try: # Usado para sacar la presión atmosférica a partir de la altura
+        alt_1 = float(input('Altura:'))
+        pres = (-0.064191887008818 * alt_1) + 892.665324279717
+    except:
+        pres = 752.01
     td =243.04*(math.log(rh/100)+((17.625*t)/(243.04+t)))/(17.625-math.log(rh/100)-((17.625*t)/(243.04+t))) # Dewpoint-Punto de rocío calculado de forma 1
     td2 = t - ((100-rh)/5.) # Dewpoint-Punto de rocío calulado de la forma 2
     rh = t*math.atan(0.151977*(rh + 8.313659)**(1/2)) + math.atan(t + rh) - math.atan(rh - 1.676331
@@ -22,6 +27,8 @@ def dp():
     rh_3= (w*100)/w_s
     ## Sensación termica
     s_T = -8.78469476 + 1.61139411 * t + 2.338548839*rh - 0.14611605*t*rh - 0.012308094*(t**2) - 0.016424828*(rh**2) + 0.0022111732*(t**2)*rh + 0.00072546*t*(rh**2) - 0.000003582*(t**2)*(rh**2)
+    print('__________________________')
+    print('Presión atmosférica', pres)
     print('__________________________')
     print('Presión hPa')
     print('Pres vapor agua °C')
